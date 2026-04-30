@@ -1,0 +1,26 @@
+# Maven
+target/
+
+# Logs & Reports
+logs/
+reports/
+screenshots/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+
+# Java
+*.class
+*.log
