@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <test name="All Tests">
+        <classes>
+            <class name="com.qaproject.tests.LoginTest"/>
+            <class name="com.qaproject.tests.AddToCartTest"/>
+            <class name="com.qaproject.tests.CheckoutTest"></class>
+            <class name="com.qaproject.tests.RemoveFromCartTest"/>
+        </classes>
+    </test>
+</suite>
