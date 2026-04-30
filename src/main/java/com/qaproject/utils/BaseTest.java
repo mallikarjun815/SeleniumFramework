@@ -43,6 +43,9 @@ public class BaseTest {
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-features=PasswordLeakDetection");
         options.addArguments("--disable-features=SafeBrowsingEnhancedProtection");
+        options.addArguments("--headless=new");   // VERY IMPORTANT
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
         // disable password manager completely
         Map<String, Object> prefs = new HashMap<>();
