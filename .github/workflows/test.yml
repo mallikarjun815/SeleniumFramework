@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]
+        browser: [chrome,firefox]
 
     steps:
       - name: Checkout code

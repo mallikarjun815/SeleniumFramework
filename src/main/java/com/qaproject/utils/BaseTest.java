@@ -4,6 +4,7 @@ import com.qaproject.config.ConfigReader;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -23,13 +24,12 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
 
-        // 👉 Get browser from CLI (for CI/CD)
         String browser = System.getProperty("browser", "chrome");
+        System.out.println("Running on browser: " + browser);
 
         if (browser.equalsIgnoreCase("chrome")) {
 
             ChromeOptions options = new ChromeOptions();
-
             options.addArguments("--incognito");
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-popup-blocking");
@@ -41,8 +41,6 @@ public class BaseTest {
             options.addArguments("--disable-infobars");
             options.addArguments("--disable-features=PasswordLeakDetection");
             options.addArguments("--disable-features=SafeBrowsingEnhancedProtection");
-
-            // 👉 Keep headless for CI, optional locally
             options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -57,6 +55,13 @@ public class BaseTest {
                     new String[]{"enable-automation"});
 
             driver = new ChromeDriver(options);
+
+        } else if (browser.equalsIgnoreCase("firefox")) {
+
+            driver = new FirefoxDriver();
+
+        } else {
+            throw new RuntimeException("Browser not supported: " + browser);
         }
 
         driver.manage().window().maximize();
