@@ -8,4 +8,7 @@
             <class name="com.qaproject.tests.RemoveFromCartTest"/>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
 </suite>
