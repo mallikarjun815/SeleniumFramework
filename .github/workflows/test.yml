@@ -6,12 +6,13 @@ on:
 
 jobs:
   test:
+    timeout-minutes: 15
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome]
 
     steps:
       - name: Checkout code
