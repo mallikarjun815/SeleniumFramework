@@ -7,7 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import io.qameta.allure.testng.AllureTestNg;
+import org.testng.annotations.Listeners;
 
+@Listeners({AllureTestNg.class})
 public class RemoveFromCartTest extends BaseTest {
 
     @Test
